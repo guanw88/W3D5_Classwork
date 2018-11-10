@@ -11,7 +11,7 @@ class SQLObject
         SELECT
           *
         FROM
-          '#{self.table_name}';
+          #{self.table_name};
       SQL
       )[0].map {|col| col.to_sym}
   end
@@ -50,7 +50,7 @@ class SQLObject
       SELECT
         *
       FROM
-        '#{self.table_name}';
+        #{self.table_name};
     SQL
     self.parse_all(results)
   end
@@ -68,7 +68,7 @@ class SQLObject
       SELECT
         *
       FROM
-        '#{self.table_name}'
+        #{self.table_name}
       WHERE
         id = ?;
     SQL
